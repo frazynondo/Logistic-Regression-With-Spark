@@ -48,33 +48,33 @@ public static Dataset<Row> buildDurhamParkDataFrames(SparkSession spark){
 
 
 
-public static void practice(){
-    //    System.setProperty("hadoop.home.dir", "c:hadoop");
-//    Logger.getLogger("org.apache").setLevel(Level.OFF);
-
-
-    SparkSession spark = SparkSession.builder().appName("testingsql").master("local")
-            .getOrCreate();
-
-    //Stop the errors
-    spark.sparkContext().setLogLevel("ERROR");
-
-    Dataset<Row> dataset = spark.read()
-//            .format("csv")
-            .option("header", true)
-            .option("inferSchema", true)
-            .csv("/Users/faradjanondo/Desktop/resources/exams/students.csv");
-    dataset.show(10);
-    dataset.printSchema();
-    Row firstRow = dataset.first();
-    System.out.println("\n");
-    String subject = firstRow.get(2).toString();
-    System.out.println("Subject\n: "+ subject);
-//     long counting = dataset.count();
-//     System.out.println("WHY NOT PRINT");
-//    System.out.println("Count is :"+dataset.count());
-
-
-    spark.close();
-}
+//public static void practice(){
+//    //    System.setProperty("hadoop.home.dir", "c:hadoop");
+////    Logger.getLogger("org.apache").setLevel(Level.OFF);
+//
+//
+//    SparkSession spark = SparkSession.builder().appName("testingsql").master("local")
+//            .getOrCreate();
+//
+//    //Stop the errors
+//    spark.sparkContext().setLogLevel("ERROR");
+//
+//    Dataset<Row> dataset = spark.read()
+////            .format("csv")
+//            .option("header", true)
+//            .option("inferSchema", true)
+//            .csv("/Users/faradjanondo/Desktop/resources/exams/students.csv");
+//    dataset.show(10);
+//    dataset.printSchema();
+//    Row firstRow = dataset.first();
+//    System.out.println("\n");
+//    String subject = firstRow.get(2).toString();
+//    System.out.println("Subject\n: "+ subject);
+////     long counting = dataset.count();
+////     System.out.println("WHY NOT PRINT");
+////    System.out.println("Count is :"+dataset.count());
+//
+//
+//    spark.close();
+//}
 }
